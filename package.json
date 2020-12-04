@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "convert": "node_modules/.bin/docsify-pdf-converter"
+  },
+  "name": "garwer-java",
+  "description": "garwer的java笔记@doocs，https://github.com/doocs/garwer-java",
+  "version": "1.0.0",
+  "main": ".docsifytopdfrc.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doocs/garwer-java.git"
+  },
+  "author": "yanglbme",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/doocs/garwer-java/issues"
+  },
+  "homepage": "https://github.com/doocs/garwer-java#readme",
+  "dependencies": {
+    "puppeteer": "^5.5.0"
+  }
+}

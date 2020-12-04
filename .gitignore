@@ -1,0 +1,12 @@
+node_modules
+dist
+src/.umi
+src/.umi-production
+yarn-error.log
+.DS_Store
+.vscode
+.idea
+.eslintcache
+_mstemplate
+server/static
+package-lock.json
