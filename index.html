@@ -1,146 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>garwer的java学习笔记</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="referrer" content="no-referrer"/>
-    <meta
-      name="keywords"
-      content="doc,docs,doocs,documentation,github,gitee,garwer-java"
-    />
-    <meta
-      name="description"
-      content="garwer的笔记，项目维护者：林嘉伟"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"
-    />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify-dark-mode@0.6.1/dist/style.css"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="images/favicon-16x16.png"
-    />
-  </head>
 
-  <body>
-    <nav>
-      <ul>
-        <li>
-          分类
-          <ul>
-            <li><a href="#/docs/java-concurrent/多线程、并发入门">高并发</a></li>
-          </ul>
-        </li>
-        <li>
-          页面
-          <ul>
-            <li><a href="#">封面</a></li>
-            <li><a href="#/README">首页</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-    <div id="app">本系列为平时学习的时候整理的java相关小笔记</div>
-    <script>
-      window.$docsify = {
-        name: "garwer-java",
-        repo: "garwer/garwer-java",
-        maxLevel: 3,
-        auto2top: true,
-        coverpage: true,
-        coverpage: "docs/extra-page/cover.md",
-        loadSidebar: "summary.md",
-        alias: {
-          "/.*/.*/summary": "summary.md",
-          "/.*/summary.md": "summary.md",
-        },
-        pagination: {
-          previousText: "上一篇",
-          nextText: "下一篇",
-          crossChapter: true,
-          crossChapterText: true,
-        },
-        search: {
-          maxAge: 1800000,
-          paths: [
-          ],
-          depth: 3,
-        },
-        darkMode: {
-          light: {
-            toggleBtnBg: "#42b983",
-          },
-        },
-        plugins: [
-          function (hook, vm) {
-            hook.beforeEach(function (content) {
-              const en = vm.route.file.indexOf("README_EN") > -1;
-              if (/githubusercontent\.com/.test(vm.route.file)) {
-                url = vm.route.file
-                  .replace("raw.githubusercontent.com", "github.com")
-                  .replace(/\/main/, "/blob/main");
-              } else {
-                url =
-                  "https://github.com/doocs/garwer-java/blob/main/" +
-                  vm.route.file;
-              }
+<head>
+  <meta charset="UTF-8" />
+  <title>garwer的Java学习笔记</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="keywords" content="doc,docs,doocs,documentation,github,gitee,garwer-java" />
+  <meta name="description" content="garwer的笔记，项目维护者：林嘉伟" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-mode@0.6.1/dist/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+</head>
 
-              const github = `[GitHub](${url})`;
-              const gitee = `[Gitee](${url.replace("github", "gitee")})`;
-
-              const editHtml = en
-                ? `:memo: Edit on ${github} / ${gitee}\n`
-                : `:memo: 在 ${github} / ${gitee} 编辑\n`;
-
-              if (vm.route.path == "/") {
-                return editHtml + content;
-              }
-
-              const subscription = '';
-              return editHtml + content + `\n` + subscription;
-            });
-
-            hook.afterEach(function (html) {
-              const footer = [
-                "<footer>",
-                '<span>Copyright © 2018-2020 <a href="https://github.com/doocs" target="_blank">Doocs</a>. All rights reserved.',
-                "</footer>",
-              ].join("");
-              return html + footer;
-            });
-          },
+<body>
+  <nav>
+    <ul>
+      <li>
+        分类
+        <ul>
+          <li><a href="#/docs/java-concurrent/多线程、并发入门">高并发</a></li>
+        </ul>
+      </li>
+      <li>
+        页面
+        <ul>
+          <li><a href="#">封面</a></li>
+          <li><a href="#/README">首页</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div id="app">本系列为平时学习的时候整理的java相关小笔记</div>
+  <script>
+    window.$docsify = {
+      name: "garwer-java",
+      repo: "garwer/garwer-java",
+      maxLevel: 3,
+      auto2top: true,
+      coverpage: true,
+      coverpage: "docs/extra-page/cover.md",
+      loadSidebar: "summary.md",
+      alias: {
+        "/.*/.*/summary": "summary.md",
+        "/.*/summary.md": "summary.md",
+      },
+      // count: {
+      //   countable: true,
+      //   fontsize: '0.9em',
+      //   color: 'rgb(90,90,90)',
+      //   language: 'chinese'
+      // },
+      pagination: {
+        previousText: "上一篇",
+        nextText: "下一篇",
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      search: {
+        maxAge: 1800000,
+        paths: [
         ],
-      };
-    </script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify-dark-mode@0.6.1/dist/index.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  </body>
+        depth: 3,
+      },
+      darkMode: {
+        light: {
+          toggleBtnBg: "#42b983",
+        },
+      },
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (content) {
+            const en = vm.route.file.indexOf("README_EN") > -1;
+            if (/githubusercontent\.com/.test(vm.route.file)) {
+              url = vm.route.file
+                .replace("raw.githubusercontent.com", "github.com")
+                .replace(/\/main/, "/blob/main");
+            } else {
+              url =
+                "https://github.com/doocs/garwer-java/blob/main/" +
+                vm.route.file;
+            }
+
+            const github = `[GitHub](${url})`;
+            const gitee = `[Gitee](${url.replace("github", "gitee")})`;
+
+            const editHtml = en
+              ? `:memo: Edit on ${github} / ${gitee}\n`
+              : `:memo: 在 ${github} / ${gitee} 编辑\n`;
+
+            if (vm.route.path == "/") {
+              return editHtml + content;
+            }
+
+            const subscription = '';
+            return editHtml + content + `\n` + subscription;
+          });
+
+          hook.afterEach(function (html) {
+            const footer = [
+              "<footer>",
+              '<span>Copyright © 2018-2020 <a href="https://github.com/doocs" target="_blank">Doocs</a>. All rights reserved.',
+              "</footer>",
+            ].join("");
+            return html + footer;
+          });
+        },
+      ],
+    };
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-dark-mode@0.6.1/dist/index.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    // 创建gittalk https://blog.csdn.net/qq_34691713/article/details/98333296
+    const gitalk = new Gitalk({
+      clientID: 'ac6c6a1b2edcbbef54b8',
+      clientSecret: 'ea960fc024e18129c667a4f0476e1c4c6a41feb1',
+      repo: 'garwer-java',
+      owner: 'garwer',
+      admin: ['garwer'],
+      // facebook-like distraction free mode
+      distractionFreeMode: false
+    })
+  </script>
+</body>
+
 </html>
