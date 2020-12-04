@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>garwer的Java学习笔记</title>
+  <title>garwer的Java学习笔记-beta</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="referrer" content="no-referrer" />
   <meta name="keywords" content="doc,docs,doocs,documentation,github,gitee,garwer-java" />
@@ -127,17 +127,19 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
-
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
   <script>
     // 创建gittalk https://blog.csdn.net/qq_34691713/article/details/98333296
+    var title = location.pathname.substr(0, 50);
     const gitalk = new Gitalk({
       clientID: 'ac6c6a1b2edcbbef54b8',
       clientSecret: 'ea960fc024e18129c667a4f0476e1c4c6a41feb1',
       repo: 'garwer-java',
       owner: 'garwer',
       admin: ['garwer'],
+      // 规避50个字符限制
+      id: title, 
       // facebook-like distraction free mode
       distractionFreeMode: false
     })
