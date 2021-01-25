@@ -12,6 +12,7 @@
 4. 进入 garwer-java 根目录：`cd garwer-java`
 5. 执行命令，启动一个本地服务器：`docsify serve`
 6. 浏览器访问地址：http://localhost:3000
+7. 链接: https://garwer.github.io/garwer-java/#/
 
 ##### 如需要自动生成pdf的功能，可以添加以下依赖后执行 docsify-pdf-converter 相关命令 
 "devDependencies": {
